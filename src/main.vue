@@ -101,6 +101,7 @@ export default {
     day(val) {
       this.now = this.now.clone().date(val)
       this.date = this.dump()
+      this.hide()
     }
   },
   methods: {

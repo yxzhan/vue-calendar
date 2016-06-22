@@ -55,7 +55,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/jxli/github/vue-calendar/src/main.vue"
+	  var id = "D:\\lunkr\\vue-calendar\\src\\main.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -80,8 +80,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-570bc767&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-570bc767&file=main.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./main.vue");
+			module.hot.accept("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-4795de00&file=main.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./main.vue", function() {
+				var newContent = require("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-4795de00&file=main.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./main.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -99,7 +99,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".calendar[_v-570bc767] {\n  display: inline-block;\n  width: 200px;\n}\n.panel[_v-570bc767] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  text-align: center;\n}\n.fade-transition[_v-570bc767] {\n  -webkit-transition: opacity .15s ease;\n  transition: opacity .15s ease;\n}\n.fade-enter[_v-570bc767],\n.fade-leave[_v-570bc767] {\n  opacity: 0;\n}\n", "", {"version":3,"sources":["/./src/main.vue.style"],"names":[],"mappings":"AAAA;EACE,sBAAsB;EACtB,aAAa;CACd;AACD;EACE,qBAAc;EAAd,sBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,wBAAgB;MAAhB,oBAAgB;UAAhB,gBAAgB;EAChB,mBAAmB;CACpB;AACD;EACE,sCAA8B;EAA9B,8BAA8B;CAC/B;AACD;;EAEE,WAAW;CACZ","file":"main.vue","sourcesContent":[".calendar {\n  display: inline-block;\n  width: 200px;\n}\n.panel {\n  display: flex;\n  flex-wrap: wrap;\n  text-align: center;\n}\n.fade-transition {\n  transition: opacity .15s ease;\n}\n.fade-enter,\n.fade-leave {\n  opacity: 0;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".calendar[_v-4795de00] {\n  display: inline-block;\n  width: 200px;\n}\n.panel[_v-4795de00] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  text-align: center;\n}\n.fade-transition[_v-4795de00] {\n  -webkit-transition: opacity .15s ease;\n  transition: opacity .15s ease;\n}\n.fade-enter[_v-4795de00],\n.fade-leave[_v-4795de00] {\n  opacity: 0;\n}\n", "", {"version":3,"sources":["/./src/main.vue.style"],"names":[],"mappings":"AAAA;EACE,sBAAsB;EACtB,aAAa;CACd;AACD;EACE,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,oBAAgB;MAAhB,gBAAgB;EAChB,mBAAmB;CACpB;AACD;EACE,sCAA8B;EAA9B,8BAA8B;CAC/B;AACD;;EAEE,WAAW;CACZ","file":"main.vue","sourcesContent":[".calendar {\n  display: inline-block;\n  width: 200px;\n}\n.panel {\n  display: flex;\n  flex-wrap: wrap;\n  text-align: center;\n}\n.fade-transition {\n  transition: opacity .15s ease;\n}\n.fade-enter,\n.fade-leave {\n  opacity: 0;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -377,7 +377,6 @@
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-		var sourceMap = obj.sourceMap;
 	
 		if(media) {
 			styleElement.setAttribute("media", media)
@@ -395,7 +394,6 @@
 	
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
-		var media = obj.media;
 		var sourceMap = obj.sourceMap;
 	
 		if(sourceMap) {
@@ -555,6 +553,7 @@
 	    day: function day(val) {
 	      this.now = this.now.clone().date(val);
 	      this.date = this.dump();
+	      this.hide();
 	    }
 	  },
 	  methods: {
@@ -876,7 +875,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/jxli/github/vue-calendar/src/days.vue"
+	  var id = "D:\\lunkr\\vue-calendar\\src\\days.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -900,8 +899,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-689599f6&file=days.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./days.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-689599f6&file=days.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./days.vue");
+			module.hot.accept("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-50de7c9e&file=days.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./days.vue", function() {
+				var newContent = require("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-50de7c9e&file=days.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./days.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -919,7 +918,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".bar[_v-689599f6] {\n  -webkit-flex-basis: 100%;\n      -ms-flex-preferred-size: 100%;\n          flex-basis: 100%;\n  text-align: center;\n}\n.box.active[_v-689599f6] {\n  background-color: cyan;\n}\n.box[_v-689599f6]:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.day[_v-689599f6] {\n  -webkit-flex-basis: 14.28571429%;\n      -ms-flex-preferred-size: 14.28571429%;\n          flex-basis: 14.28571429%;\n  margin: 5px 0;\n}\n", "", {"version":3,"sources":["/./src/days.vue.style"],"names":[],"mappings":"AAAA;EACE,yBAAiB;MAAjB,8BAAiB;UAAjB,iBAAiB;EACjB,mBAAmB;CACpB;AACD;EACE,uBAAuB;CACxB;AACD;EACE,sBAAsB;EACtB,gBAAgB;CACjB;AACD;EACE,iCAAyB;MAAzB,sCAAyB;UAAzB,yBAAyB;EACzB,cAAc;CACf","file":"days.vue","sourcesContent":[".bar {\n  flex-basis: 100%;\n  text-align: center;\n}\n.box.active {\n  background-color: cyan;\n}\n.box:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.day {\n  flex-basis: 14.28571429%;\n  margin: 5px 0;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".bar[_v-50de7c9e] {\n  -ms-flex-preferred-size: 100%;\n      flex-basis: 100%;\n  text-align: center;\n}\n.box.active[_v-50de7c9e] {\n  background-color: cyan;\n}\n.box[_v-50de7c9e]:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.day[_v-50de7c9e] {\n  -ms-flex-preferred-size: 14.28571429%;\n      flex-basis: 14.28571429%;\n  margin: 5px 0;\n}\n", "", {"version":3,"sources":["/./src/days.vue.style"],"names":[],"mappings":"AAAA;EACE,8BAAiB;MAAjB,iBAAiB;EACjB,mBAAmB;CACpB;AACD;EACE,uBAAuB;CACxB;AACD;EACE,sBAAsB;EACtB,gBAAgB;CACjB;AACD;EACE,sCAAyB;MAAzB,yBAAyB;EACzB,cAAc;CACf","file":"days.vue","sourcesContent":[".bar {\n  flex-basis: 100%;\n  text-align: center;\n}\n.box.active {\n  background-color: cyan;\n}\n.box:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.day {\n  flex-basis: 14.28571429%;\n  margin: 5px 0;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -965,7 +964,7 @@
 	// </script>
 	/* generated by vue-loader */
 	// <template>
-	//   <div>
+	//   <div class="dropdown-menu">
 	//     <div :class="classNames.bar">
 	//       <span @click="next(-1)">&lt;</span>
 	//       <span @click="display('years')">{{date.format('YYYY')}}</span>
@@ -1015,7 +1014,7 @@
 /* 29 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div _v-689599f6=\"\">\n    <div :class=\"classNames.bar\" _v-689599f6=\"\">\n      <span @click=\"next(-1)\" _v-689599f6=\"\">&lt;</span>\n      <span @click=\"display('years')\" _v-689599f6=\"\">{{date.format('YYYY')}}</span>\n      <span @click=\"display('months')\" _v-689599f6=\"\">{{date.format('MM')}}</span>\n      <span @click=\"next(1)\" _v-689599f6=\"\">&gt;</span>\n    </div>\n    <div v-for=\"val in weekText\" unhover=\"\" :class=\"[classNames.day, classNames.box]\" _v-689599f6=\"\">{{val}}</div>\n    <div v-for=\"day in days\" track-by=\"$index\" :class=\"[classNames.day, classNames.box, active('day', day)]\" :unhover=\"!day\" @click=\"select(day)\" _v-689599f6=\"\">{{day}}</div>\n  </div>\n";
+	module.exports = "\n  <div class=\"dropdown-menu\" _v-50de7c9e=\"\">\n    <div :class=\"classNames.bar\" _v-50de7c9e=\"\">\n      <span @click=\"next(-1)\" _v-50de7c9e=\"\">&lt;</span>\n      <span @click=\"display('years')\" _v-50de7c9e=\"\">{{date.format('YYYY')}}</span>\n      <span @click=\"display('months')\" _v-50de7c9e=\"\">{{date.format('MM')}}</span>\n      <span @click=\"next(1)\" _v-50de7c9e=\"\">&gt;</span>\n    </div>\n    <div v-for=\"val in weekText\" unhover=\"\" :class=\"[classNames.day, classNames.box]\" _v-50de7c9e=\"\">{{val}}</div>\n    <div v-for=\"day in days\" track-by=\"$index\" :class=\"[classNames.day, classNames.box, active('day', day)]\" :unhover=\"!day\" @click=\"select(day)\" _v-50de7c9e=\"\">{{day}}</div>\n  </div>\n";
 
 /***/ },
 /* 30 */
@@ -1032,7 +1031,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/jxli/github/vue-calendar/src/months.vue"
+	  var id = "D:\\lunkr\\vue-calendar\\src\\months.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1056,8 +1055,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-f32095be&file=months.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./months.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-f32095be&file=months.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./months.vue");
+			module.hot.accept("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-666cfc7a&file=months.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./months.vue", function() {
+				var newContent = require("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-666cfc7a&file=months.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./months.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1075,7 +1074,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".box.active[_v-f32095be] {\n  background-color: cyan;\n}\n.box[_v-f32095be]:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.month[_v-f32095be] {\n  -webkit-flex-basis: 25%;\n      -ms-flex-preferred-size: 25%;\n          flex-basis: 25%;\n  margin: 10px 0;\n}\n", "", {"version":3,"sources":["/./src/months.vue.style"],"names":[],"mappings":"AAAA;EACE,uBAAuB;CACxB;AACD;EACE,sBAAsB;EACtB,gBAAgB;CACjB;AACD;EACE,wBAAgB;MAAhB,6BAAgB;UAAhB,gBAAgB;EAChB,eAAe;CAChB","file":"months.vue","sourcesContent":[".box.active {\n  background-color: cyan;\n}\n.box:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.month {\n  flex-basis: 25%;\n  margin: 10px 0;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".box.active[_v-666cfc7a] {\n  background-color: cyan;\n}\n.box[_v-666cfc7a]:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.month[_v-666cfc7a] {\n  -ms-flex-preferred-size: 25%;\n      flex-basis: 25%;\n  margin: 10px 0;\n}\n", "", {"version":3,"sources":["/./src/months.vue.style"],"names":[],"mappings":"AAAA;EACE,uBAAuB;CACxB;AACD;EACE,sBAAsB;EACtB,gBAAgB;CACjB;AACD;EACE,6BAAgB;MAAhB,gBAAgB;EAChB,eAAe;CAChB","file":"months.vue","sourcesContent":[".box.active {\n  background-color: cyan;\n}\n.box:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.month {\n  flex-basis: 25%;\n  margin: 10px 0;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -1125,7 +1124,7 @@
 /* 34 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div _v-f32095be=\"\">\n    <div v-for=\"(index, m) in monthText\" :class=\"[classNames.month, classNames.box, active('month', index)]\" @click=\"select(index)\" _v-f32095be=\"\">{{m}}</div>\n  </div>\n";
+	module.exports = "\n  <div _v-666cfc7a=\"\">\n    <div v-for=\"(index, m) in monthText\" :class=\"[classNames.month, classNames.box, active('month', index)]\" @click=\"select(index)\" _v-666cfc7a=\"\">{{m}}</div>\n  </div>\n";
 
 /***/ },
 /* 35 */
@@ -1142,7 +1141,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/jxli/github/vue-calendar/src/years.vue"
+	  var id = "D:\\lunkr\\vue-calendar\\src\\years.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1166,8 +1165,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-ff1792d0&file=years.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./years.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-ff1792d0&file=years.vue&scoped=true!./../node_modules/less-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./years.vue");
+			module.hot.accept("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-bf17bfc2&file=years.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./years.vue", function() {
+				var newContent = require("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js?sourceMap!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/style-rewriter.js?id=_v-bf17bfc2&file=years.vue&scoped=true!./../node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../node_modules/.npminstall/vue-loader/7.5.3/vue-loader/lib/selector.js?type=style&index=0!./years.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1185,7 +1184,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".panel-vertical[_v-ff1792d0] {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-flex-wrap: nowrap;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n  max-height: 300px;\n  overflow-y: auto;\n}\n.box.active[_v-ff1792d0] {\n  background-color: cyan;\n}\n.box[_v-ff1792d0]:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.year[_v-ff1792d0] {\n  margin: 5px 0;\n}\n", "", {"version":3,"sources":["/./src/years.vue.style"],"names":[],"mappings":"AAAA;EACE,6BAAuB;EAAvB,8BAAuB;EAAvB,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,0BAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;EAClB,kBAAkB;EAClB,iBAAiB;CAClB;AACD;EACE,uBAAuB;CACxB;AACD;EACE,sBAAsB;EACtB,gBAAgB;CACjB;AACD;EACE,cAAc;CACf","file":"years.vue","sourcesContent":[".panel-vertical {\n  flex-direction: column;\n  flex-wrap: nowrap;\n  max-height: 300px;\n  overflow-y: auto;\n}\n.box.active {\n  background-color: cyan;\n}\n.box:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.year {\n  margin: 5px 0;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".panel-vertical[_v-bf17bfc2] {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  max-height: 300px;\n  overflow-y: auto;\n}\n.box.active[_v-bf17bfc2] {\n  background-color: cyan;\n}\n.box[_v-bf17bfc2]:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.year[_v-bf17bfc2] {\n  margin: 5px 0;\n}\n", "", {"version":3,"sources":["/./src/years.vue.style"],"names":[],"mappings":"AAAA;EACE,6BAAuB;EAAvB,8BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,sBAAkB;MAAlB,kBAAkB;EAClB,kBAAkB;EAClB,iBAAiB;CAClB;AACD;EACE,uBAAuB;CACxB;AACD;EACE,sBAAsB;EACtB,gBAAgB;CACjB;AACD;EACE,cAAc;CACf","file":"years.vue","sourcesContent":[".panel-vertical {\n  flex-direction: column;\n  flex-wrap: nowrap;\n  max-height: 300px;\n  overflow-y: auto;\n}\n.box.active {\n  background-color: cyan;\n}\n.box:hover:not([unhover]) {\n  background-color: red;\n  cursor: pointer;\n}\n.year {\n  margin: 5px 0;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -1261,13 +1260,13 @@
 /* 39 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div :class=\"classNames.panel + '-vertical'\" _v-ff1792d0=\"\">\n    <div v-for=\"y in years\" :class=\"[classNames.year, classNames.box, active('year', y)]\" @click=\"select(y)\" _v-ff1792d0=\"\">{{y}}</div>\n  </div>\n";
+	module.exports = "\n  <div :class=\"classNames.panel + '-vertical'\" _v-bf17bfc2=\"\">\n    <div v-for=\"y in years\" :class=\"[classNames.year, classNames.box, active('year', y)]\" @click=\"select(y)\" _v-bf17bfc2=\"\">{{y}}</div>\n  </div>\n";
 
 /***/ },
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div :class=\"classNames.root\" _v-570bc767=\"\">\n    <input :class=\"classNames.input\" type=\"text\" v-model=\"date\" @keydown.stop.prevent=\"\" @click=\"show\" _v-570bc767=\"\">\n    <component :class=\"classNames.panel\" :is=\"currentView\" keep-alive=\"\" transition=\"fade\" transition-mode=\"out-in\" :date=\"now\" :display=\"display\" :active=\"active\" :week-text=\"weekText\" :month-text=\"monthText\" :class-names=\"classNames\" _v-570bc767=\"\"></component>\n  </div>\n";
+	module.exports = "\n  <div :class=\"classNames.root\" _v-4795de00=\"\">\n    <input :class=\"classNames.input\" type=\"text\" v-model=\"date\" @keydown.stop.prevent=\"\" @click=\"show\" _v-4795de00=\"\">\n    <component :class=\"classNames.panel\" :is=\"currentView\" keep-alive=\"\" transition=\"fade\" transition-mode=\"out-in\" :date=\"now\" :display=\"display\" :active=\"active\" :week-text=\"weekText\" :month-text=\"monthText\" :class-names=\"classNames\" _v-4795de00=\"\"></component>\n  </div>\n";
 
 /***/ }
 /******/ ])));

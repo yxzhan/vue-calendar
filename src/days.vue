@@ -9,7 +9,7 @@
     <div v-for="val in weekText" unhover
     :class="[classNames.day, classNames.box]"
     >{{val}}</div>
-    <div v-for="day in days" track-by="$index"
+    <div v-for="(day, index) in days" :key="index"
     :class="[classNames.day, classNames.box, active('day', day)]"
     :unhover="!day"
     @click="select(day)">{{day}}</div>
@@ -48,10 +48,10 @@ export default {
       return this.date.date() === day ? this.classNames.active : ''
     },
     select(day) {
-      this.$dispatch('day', day)
+      this.$emit('day', day)
     },
     next(step) {
-      this.$dispatch('month', this.date.month() + step)
+      this.$emit('month', this.date.month() + step)
     }
   }
 }

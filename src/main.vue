@@ -1,18 +1,22 @@
 <template>
-  <div :class="classNames.root">
-    <input :class="classNames.input" type="text"
-    v-model="date" @keydown.stop.prevent @click="show">
-    <component :class="classNames.panel" :is="currentView"
-    keep-alive
-    transition="fade"
-    transition-mode="out-in"
-    :date="now"
-    :display="display"
-    :active="active"
-    :week-text="weekText"
-    :month-text="monthText"
-    :class-names="classNames"
-    ></component>
+  <div :class="combineClassNames.root">
+    <input :class="combineClassNames.input" type="text"
+    :value="value" @keydown.stop.prevent @click="show">
+    <transition name="fade">
+        <component :class="combineClassNames.panel" :is="currentView"
+                   keep-alive
+                   transition-mode="out-in"
+                   :date="now"
+                   :display="display"
+                   :active="active"
+                   :week-text="weekText"
+                   :month-text="monthText"
+                   :class-names="combineClassNames"
+                   @day="day"
+                   @month="month"
+                   @year="year"
+        ></component>
+    </transition>
   </div>
 </template>
 
@@ -26,15 +30,15 @@
  flex-wrap: wrap;
  text-align: center;
 }
-.fade-transition {
+.fade-enter-active, .fade-leave-active {
   transition: opacity .15s ease;
 }
-.fade-enter, .fade-leave {
+.fade-enter, .fade-leave-active {
   opacity: 0;
 }
 </style>
 
-<script>
+<script lang="babel">
 import moment from 'moment'
 import days from './days.vue'
 import months from './months.vue'
@@ -46,26 +50,12 @@ export default {
       type: String,
       default: () => 'YYYY/MM/DD'
     },
-    date: {
+    value: {
       type: String,
-      twoWay: true,
       required: true
     },
     classNames: {
-      type: Object,
-      coerce(val) {
-        let preset = {
-          root: 'calendar',
-          input: 'calendar-input',
-          panel: 'panel',
-          box: 'box',
-          bar: 'bar',
-          day: 'day',
-          month: 'month',
-          year: 'year'
-        }
-        return {...preset, ...val}
-      }
+      type: Object
     },
     weekText: {
       type: Array,
@@ -77,21 +67,42 @@ export default {
     }
   },
   data() {
-    let now = moment(this.date, this.format)
+    let now = moment(this.value, this.format)
     return {
+      date: '',
       now,
       currentView: null,
       dateCache: now.clone(),
       blur: e => !this.$el.contains(e.target) && this.hide()
     }
   },
-  ready() {
+  computed: {
+    combineClassNames() {
+        let preset = {
+            root: 'calendar',
+            input: 'calendar-input',
+            panel: 'panel',
+            box: 'box',
+            bar: 'bar',
+            day: 'day',
+            month: 'month',
+            year: 'year'
+        }
+        return {...preset, ...this.classNames}
+    }
+  },
+  watch:{
+    date(val) {
+      this.$emit('input', val)
+    },
+  },
+  mounted() {
     window.addEventListener('click', this.blur)
   },
   beforeDestroy() {
     window.removeEventListener('click', this.blur)
   },
-  events: {
+  methods: {
     year(val) {
       this.now = this.now.clone().year(val)
     },
@@ -102,9 +113,7 @@ export default {
       this.now = this.now.clone().date(val)
       this.date = this.dump()
       this.hide()
-    }
-  },
-  methods: {
+    },
     show() {
       this.currentView = 'days'
     },

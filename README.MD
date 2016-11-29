@@ -6,19 +6,19 @@
 
 ## Requirement
 
-- "vue": "^1.0.12"
+- "vue": "^2.0.3"
 - "moment": "^2.11.2"
 
 ## Usage
 
 ```html
-<calendar :date.sync="dateString" format="YYYY/MM/DD"></calendar>
+<calendar v-model="dateString" format="YYYY/MM/DD"></calendar>
 ```
 You can uninstall the preset style by pass a object which overrided the
 class name of each block to classNames.
 
 ```html
-<calendar :date.sync="dateString" :class-names="{panel: 'custom-panel'}"></calendar>
+<calendar v-model="dateString" :class-names="{panel: 'custom-panel'}"></calendar>
 ```
 
 Then define your own style with new class name

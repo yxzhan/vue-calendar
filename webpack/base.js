@@ -10,6 +10,11 @@ module.exports = {
     externals: {
         moment: 'commonjs moment'
     },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.js'
+        }
+    },
     module: {
         loaders: [{
             test: /\.vue$/,
